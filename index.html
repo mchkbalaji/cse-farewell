@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random GIF Display</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        video {
+            max-width: 90vw;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video id="randomGif" autoplay loop muted playsinline></video>
+        <br>
+        <button onclick="location.reload()">Show Another GIF</button>
+    </div>
+
+    <script>
+        // List of all MP4 files
+        const gifs = [
+            "WhatsApp Video 2025-03-31 at 23.43.40_4281d57f.mp4",
+            "WhatsApp Video 2025-03-31 at 23.44.10_52efc3de.mp4",
+            "WhatsApp Video 2025-03-31 at 23.45.27_a412b40e.mp4",
+            "WhatsApp Video 2025-03-31 at 23.37.43_7c951fca.mp4",
+            "WhatsApp Video 2025-03-31 at 23.40.45_83fb2bb3.mp4",
+            "WhatsApp Video 2025-03-31 at 23.41.26_909a62a9.mp4",
+            "WhatsApp Video 2025-03-31 at 23.36.18_304abf63.mp4",
+            "WhatsApp Video 2025-03-31 at 23.36.18_0fda0432.mp4",
+            "WhatsApp Video 2025-03-31 at 23.36.02_8ac98801.mp4",
+            "WhatsApp Video 2025-03-31 at 23.34.21_ec0a5903.mp4",
+            "WhatsApp Video 2025-03-31 at 23.34.42_ff32e9aa.mp4",
+            "WhatsApp Video 2025-03-31 at 23.34.55_08e8ef9c.mp4",
+            "WhatsApp Video 2025-03-31 at 23.34.17_4e1da124.mp4",
+            "WhatsApp Video 2025-03-31 at 23.33.21_42ddf907.mp4",
+            "WhatsApp Video 2025-03-31 at 23.33.19_11513b73.mp4",
+            "WhatsApp Video 2025-03-31 at 23.32.01_80399391.mp4",
+            "WhatsApp Video 2025-03-31 at 23.30.57_d6b7f49e.mp4",
+            "WhatsApp Video 2025-03-31 at 23.31.28_f4d8f492.mp4",
+            "WhatsApp Video 2025-03-31 at 23.30.31_82b604f7.mp4",
+            "WhatsApp Video 2025-03-31 at 23.30.26_5f3fc997.mp4",
+            "WhatsApp Video 2025-03-31 at 23.30.29_4ddc4b37.mp4",
+            "WhatsApp Video 2025-03-31 at 23.30.14_e0311d85.mp4",
+            "WhatsApp Video 2025-03-31 at 23.29.57_5fe2ad6b.mp4"
+        ];
+
+        // Function to get a random GIF
+        function getRandomGif() {
+            const randomIndex = Math.floor(Math.random() * gifs.length);
+            return gifs[randomIndex];
+        }
+
+        // Set the random GIF when the page loads
+        window.onload = function() {
+            const video = document.getElementById('randomGif');
+            video.src = getRandomGif();
+        };
+    </script>
+</body>
+</html> 
